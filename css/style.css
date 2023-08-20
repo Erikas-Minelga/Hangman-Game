@@ -1,0 +1,139 @@
+.flex-row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.help {width: 100%; text-align: center; font-family: Arial, Helvetica, sans-serif; cursor: default;}
+
+.help > h2 {text-decoration: underline;}
+
+#instructions > li {font-size: clamp(12px,3vw,20px); margin-bottom: 1rem; list-style: none;}
+
+.button-wrap
+{
+    margin-left: 3%;
+    margin-right: 3%;
+    display: grid;
+    grid-template-columns: repeat(9, max-content);
+    grid-template-rows: repeat(3, max-content);
+    grid-gap: 0.5rem;
+    justify-content: center;
+}
+
+.button-wrap > button
+{
+    border-radius: 100%;
+    height: clamp(15px, 7vw, 80px);;
+    width: clamp(15px, 7vw, 80px);;
+    border: 3px solid rgb(179, 88, 154);
+    background-color: rgb(231,247,213);
+    color: black;
+    font-size: clamp(10px, 5vw, 60px);
+    transition: transform 0.1s ease-in-out;
+}
+
+.button-wrap > button:hover:not(:disabled)
+{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.button-wrap > button:disabled {color: rgb(231,247,213);}
+
+.word-wrap
+{
+    margin-bottom: 4vh;
+    font-size: clamp(40px, 4vw, 130px);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.life-card-container
+{
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1px;
+}
+
+.life-card
+{
+    height: clamp(84px, 19vw, 300px);
+    width: clamp(50px,14vw,200px);
+    background-color: rgb(155, 191, 133);
+    opacity: 0.9;
+    border-radius: 10%;
+}
+
+.life-lost
+{
+    animation: flipinx 1s ease 0s 1 normal;
+    background-color: rgb(179, 88, 154);
+    opacity: 0.3;
+}
+
+.life-lost::before
+{ 
+    content: "X"; 
+    font-size: clamp(84px, 19vw, 300px);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+dialog 
+{
+    height: 25%;
+    width: 55%;
+    min-height: 310px;
+    max-width: 320px;
+    text-align: center;
+    background-color: rgba(155, 191, 133);
+    border-radius: 2rem;
+    border-color: rgb(179, 88, 154);;
+}
+
+dialog button
+{
+    height: 25%;
+    width: 60%;
+    background-color: rgb(231,247,213);
+    border: 3px solid rgb(179, 88, 154);;
+    border-radius: 1rem;
+    font-size: large;
+    font-weight: bold;
+}
+
+dialog button:hover {background-color: rgb(208,145,187); cursor: pointer;}
+
+#definition, #word {font-size: larger; font-weight: 1000;}
+
+#definition {font-style: italic;}
+
+#definition::before,#definition::after
+{
+    content: '“';
+    text-align: center;
+}
+
+#definition::before {content: '“';}
+
+#definition::after{content: '”';}
+
+@keyframes flipinx 
+{
+    0%{ opacity: 0.9; transform: perspective(400px) rotateX(90deg); }
+    40%{ transform: perspective(400px) rotateX(-10deg); }
+    70%{ transform: perspective(400px) rotateX(10deg); }
+    100%{ opacity: 0.3; transform: perspective(400px) rotateX(0deg); }
+}
+
+@media screen and (max-width: 820px)
+{
+    #instructions {text-align: left;}
+}

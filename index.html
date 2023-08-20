@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Hangman</title>
+</head>
+<body>
+    <div class="help" aria-label="How To Play">
+        <h1>Hangman</h1>
+        <h2>How to play?</h2>
+        <ul id="instructions">
+            <li>The goal is to guess the hidden word letter by letter</li>
+            <li>Correct guess of the letter will reveal its position(s) in the word</li>
+            <li>Incorrectly guessed letters will lose a life</li>
+            <li>You have 6 lives, or 6 attempts to guess the word correctly</li>
+            <li>Number of lives is represented by the dark gray cards below</li>
+        </ul>
+    </div>
+    <div class="game-container">
+        <div class="life-card-container">
+            <div class="life-card"></div>
+            <div class="life-card"></div>
+            <div class="life-card"></div>
+            <div class="life-card"></div>
+            <div class="life-card"></div>
+            <div class="life-card"></div>
+        </div>
+        <div class="word-wrap flex-row">
+        </div>
+        <div class="button-wrap flex-row">
+        </div>
+    </div>
+    <dialog class="game-end">
+        <h2 id="heading"></h2>
+        <p>The word was: <span id="word"></span></p>
+        <p id="definition"></p>
+        <button id="play-again">Play Again</button>
+    </dialog>
+    <script type="module" src="dist/index.js"></script>
+</body>
+</html>
