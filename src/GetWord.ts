@@ -18,10 +18,10 @@ export async function getDefinition(word:string) : Promise<String>
 {
     const options = {
         method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': 'c6dc6bfb59msh7168572e9f366cdp15f930jsn5f5ca1397bfb',
-		    'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
-        }
+        headers: {	
+            'X-RapidAPI-Key': 'KEY',
+		    'X-RapidAPI-Host': 'HOST'
+        }	//Key and Host ommitted as they are sensitive data
     }
     const response : Response = await fetch(`https://wordsapiv1.p.rapidapi.com/words/${word}/definitions`,options);
     const data : JSON = await response.json();
